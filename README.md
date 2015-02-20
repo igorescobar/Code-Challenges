@@ -1,2 +1,2 @@
-# Code-Challenges
+# Code Challenges
 Code Challenges, just for fun.

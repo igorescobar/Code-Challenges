@@ -31,14 +31,12 @@
 # If y - x is divisible by d, then it takes (y - x) / d jumps
 # If y - x is not divisible by d, then it takes (y - x) / d + 1 jumps
 
-# def solution (x, y, d)
-#     if (y - x) % d == 0
-#         return (y - x) / d
-#     end
-#     (y - x) / d + 1
-# end
 
+def solution1 (x, y, d)
+  return (y - x) / d if (y - x) % d == 0
+  (y - x) / d + 1
+end
 
-def solution (x, y ,d)
+def solution2 (x, y ,d)
     (y - x) / d + ((y - x) % d == 0 ? 0 : 1)
 end
