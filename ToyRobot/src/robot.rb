@@ -4,18 +4,18 @@ require "byebug"
 
 class Robot < Interface
 
-  attr_reader :orientation
+  attr_reader :facing
   attr_accessor :x, :y, :router
 
-  def initialize(x = 0, y = 0, orientation = :north, router=Router)
+  def initialize(x = 0, y = 0, facing = :north, router=Router)
     @x = x
     @y = y
-    @orientation = orientation
-    @router = router.new @x, @y, @orientation
+    @facing = facing
+    @router = router.new @x, @y, @facing
     @directions = @router.directions
   end
 
-  def orientation=(orientation)
-    @orientation = orientation if @directions.include? orientation
+  def facing=(facing)
+    @facing = facing if @directions.include? facing
   end
 end

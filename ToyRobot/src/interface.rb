@@ -1,17 +1,17 @@
 class Interface
 
-  def place(x, y, orientation)
+  def place(x, y, facing)
     self.x = x
     self.y = y
-    self.orientation = orientation
+    self.facing = facing
   end
 
   def left(router=self.router)
-    self.orientation = router.turn_left
+    self.facing = router.turn_left
   end
 
   def right(router=self.router)
-    self.orientation = router.turn_right
+    self.facing = router.turn_right
   end
 
   def report

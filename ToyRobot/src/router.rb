@@ -1,11 +1,11 @@
 class Router
 
-  attr_accessor :orientation
+  attr_accessor :facing
 
-  def initialize(x, y, orientation)
+  def initialize(x, y, facing)
     @x = x
     @y = y
-    @orientation = orientation
+    @facing = facing
   end
 
   def directions
@@ -14,21 +14,21 @@ class Router
 
   def calculate
     [
-      @x + self.call(@orientation)[:x],
-      @y + self.call(@orientation)[:y]
+      @x + self.call(@facing)[:x],
+      @y + self.call(@facing)[:y]
     ]
   end
 
   def turn_left
-    index = directions.index self.orientation
+    index = directions.index self.facing
     direction = directions[index - 1] || directions.last
-    self.orientation = direction
+    self.facing = direction
   end
 
   def turn_right
-    index = directions.index self.orientation
+    index = directions.index self.facing
     direction = directions[index + 1] || directions.first
-    self.orientation = direction
+    self.facing = direction
   end
 
   private
