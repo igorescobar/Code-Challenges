@@ -1,4 +1,4 @@
-require "./src/robot.rb"
+require File.join File.dirname(__FILE__), '../src/robot'
 
 describe Robot do
   context "default position" do
@@ -68,6 +68,16 @@ describe Robot do
   end
 
   context "#report" do
-    it "should tell robot's current position"
+    subject(:robot) { Robot.new }
+    it "should tell robot's current position" do
+      expect(capture_stdout { robot.report }).to eq "0,0,NORTH\n"
+
+    end
+
+    it "should change place and report" do
+      robot.place 1, 2, :east
+      robot.right
+      expect(capture_stdout { robot.report }).to eq "1,2,SOUTH\n"
+    end
   end
 end

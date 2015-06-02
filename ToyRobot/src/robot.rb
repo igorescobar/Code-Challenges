@@ -1,3 +1,4 @@
+require "./src/reporter.rb"
 require "./src/interface.rb"
 require "./src/router.rb"
 require "byebug"

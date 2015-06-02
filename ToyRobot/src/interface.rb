@@ -14,7 +14,8 @@ class Interface
     self.facing = router.turn_right
   end
 
-  def report
+  def report(router=self.router, reporter=Reporter)
+    reporter.new(router).report
   end
 
   def move
