@@ -1,9 +1,9 @@
 class Interface
 
-  def place(x, y, facing)
-    self.x = x
-    self.y = y
-    self.facing = facing
+  def place(x, y, facing, router=self.router)
+    router.x = x
+    router.y = y
+    router.facing = facing
   end
 
   def left(router=self.router)
@@ -20,4 +20,5 @@ class Interface
 
   def move
   end
+
 end

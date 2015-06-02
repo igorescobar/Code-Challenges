@@ -1,6 +1,6 @@
 class Router
 
-  attr_accessor :facing
+  attr_accessor :x, :y, :facing
 
   def initialize(x, y, facing)
     @x = x
