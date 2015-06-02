@@ -62,4 +62,12 @@ describe Robot do
       expect(robot.orientation).to be :north
     end
   end
+
+  context "#move" do
+    it "it should move towards router configuration"
+  end
+
+  context "#report" do
+    it "should tell robot's current position"
+  end
 end
