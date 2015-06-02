@@ -1,8 +1,8 @@
-require "./src/reporter.rb"
-require "./src/interface.rb"
-require "./src/router.rb"
-require "./src/router.rb"
 require "byebug"
+
+require "./src/reporter"
+require "./src/interface"
+require "./src/router"
 
 class Robot < Interface
 
@@ -28,5 +28,4 @@ class Robot < Interface
   def facing
     @router.facing
   end
-
 end
