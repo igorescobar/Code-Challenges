@@ -12,6 +12,10 @@ class Router
     [:north, :east, :south, :west]
   end
 
+  def facing=(facing)
+    @facing = facing if directions.include? facing
+  end
+
   def calculate
     [
       @x + self.call(@facing)[:x],
