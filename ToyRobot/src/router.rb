@@ -2,6 +2,10 @@ class Router
 
   attr_accessor :x, :y, :facing
 
+  @@x_range = (0..4)
+  @@y_range = (0..4)
+
+
   def initialize(x, y, facing)
     @x = x
     @y = y
@@ -16,11 +20,11 @@ class Router
     @facing = facing if directions.include? facing
   end
 
-  def calculate
-    [
-      @x + self.call(@facing)[:x],
-      @y + self.call(@facing)[:y]
-    ]
+  def next_route
+    next_x = @x + self.send(@facing)[:x]
+    next_y = @y + self.send(@facing)[:y]
+
+    [ valid_range!(next_x, @@x_range) , valid_range!(next_y, @@y_range) ]
   end
 
   def turn_left
@@ -36,6 +40,12 @@ class Router
   end
 
   private
+
+  def valid_range!(n, range)
+    n = range.last if n > range.last
+    n = range.first if n < range.first
+    n
+  end
 
   def north
     {x: 0, y: 1}
