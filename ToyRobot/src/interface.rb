@@ -7,18 +7,21 @@ class Interface
   end
 
   def left(router=self.router)
-    self.facing = router.turn_left
+    router.facing = router.turn_left
   end
 
   def right(router=self.router)
-    self.facing = router.turn_right
+    router.facing = router.turn_right
   end
 
   def report(router=self.router, reporter=Reporter)
     reporter.new(router).report
   end
 
-  def move
+  def move(router=self.router)
+    coordenades = router.next_route
+    router.x = coordenades[0]
+    router.y = coordenades[1]
   end
 
 end
