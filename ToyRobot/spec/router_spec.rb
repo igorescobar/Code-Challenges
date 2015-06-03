@@ -1,4 +1,4 @@
-require "./src/router.rb"
+require "./src/router"
 
 describe Router do
   context "#next_route" do

@@ -1,4 +1,4 @@
-require File.join File.dirname(__FILE__), '../src/robot'
+require "./src/robot"
 
 describe Robot do
   context "default position" do

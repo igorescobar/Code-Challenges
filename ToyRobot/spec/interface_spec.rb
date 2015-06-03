@@ -1,4 +1,3 @@
-require "byebug"
 require "./src/interface"
 
 describe Interface do
