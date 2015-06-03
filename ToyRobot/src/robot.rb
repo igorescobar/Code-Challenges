@@ -1,12 +1,9 @@
-require "byebug"
-
 require "./src/reporter"
 require "./src/interface"
 require "./src/router"
 
 class Robot < Interface
 
-  attr_reader :facing
   attr_accessor :x, :y, :facing, :router
 
   def initialize(x = 0, y = 0, facing = :north, router=Router)
